@@ -2,7 +2,7 @@ import { Serverless } from 'serverless/aws';
 
 const serverlessConfiguration: Serverless = {
   service: {
-    name: 'nodejs-typescript-serverless-awslambda-api',
+    name: 'typescript-serverless-awslambda-api',
   },
 
   frameworkVersion: '>=1.72.0',
@@ -18,11 +18,10 @@ const serverlessConfiguration: Serverless = {
     name: 'aws',
     runtime: 'nodejs12.x',
     stage: 'dev',
-    profile: 'user2',
-    // region : 'us-east-1',
-    // role: 'arn:aws:iam::216807051395:user/singhsantosh',
+    profile: 'serverlessUser',
     apiGateway: {
       minimumCompressionSize: 1024,
+      shouldStartNameWithService: true
     },
     environment: {
       AWS_NODEJS_CONNECTION_REUSE_ENABLED: '1',
